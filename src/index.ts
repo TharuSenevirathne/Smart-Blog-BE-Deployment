@@ -25,6 +25,9 @@ app.use(cors({
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/post", postRoutes);
 app.use("/api/v1/ai", generateContent)
+app.get("/", (req, res) => {
+  res.send("Backend is running.......");
+});
 
 // Connect to MongoDB
 mongoose.connect(MONGO_URL).then(() => {
